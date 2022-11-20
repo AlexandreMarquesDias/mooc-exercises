@@ -151,11 +151,12 @@ class LaneFilterNode(DTROS):
 
         # build lane pose message to send
         lanePose = LanePose()
-        lanePose.header.stamp = segment_list_msg.header.stamp
-        lanePose.d = d_max
-        lanePose.phi = phi_max
-        lanePose.in_lane = True
-        lanePose.status = lanePose.NORMAL
+        if segment_list_msg is not None:
+            lanePose.header.stamp = segment_list_msg.header.stamp
+            lanePose.d = d_max
+            lanePose.phi = phi_max
+            lanePose.in_lane = True
+            lanePose.status = lanePose.NORMAL
 
         self.pub_lane_pose.publish(lanePose)
         if self._debug:

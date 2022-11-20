@@ -1,0 +1,596 @@
+==> Entrypoint
+Network configured successfully.
+WARNING: robot_type file does not exist. Using 'duckiebot' as default type.
+WARNING: robot_configuration file does not exist.
+WARNING: robot_hardware file does not exist.
+Forcing ROS_MASTER_URI=http://localhost:11311
+<== Entrypoint
++ dt-exec-BG roscore
++ cmd=roscore
++ eval 'stdbuf -o L roscore 1>&2 &'
++ dt-exec-BG roslaunch --wait car_interface all.launch veh:=duckonaut
+++ stdbuf -o L roscore
++ cmd='roslaunch --wait car_interface all.launch veh:=duckonaut'
++ eval 'stdbuf -o L roslaunch --wait car_interface all.launch veh:=duckonaut 1>&2 &'
++ dt-exec-BG roslaunch --wait duckietown_demos lane_following.launch
++ cmd='roslaunch --wait duckietown_demos lane_following.launch'
++ eval 'stdbuf -o L roslaunch --wait duckietown_demos lane_following.launch 1>&2 &'
+++ stdbuf -o L roslaunch --wait car_interface all.launch veh:=duckonaut
++ sleep 5
+++ stdbuf -o L roslaunch --wait duckietown_demos lane_following.launch
+... logging to /tmp/log/3536b306-391c-11ed-b6a2-0242ac110002/roslaunch-6ec17f4ca448-125.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;roscore
+roscore/master is not yet running, will wait for it to start
+roscore/master is not yet running, will wait for it to start
+[1mstarted roslaunch server http://172.17.0.2:45339/[0m
+ros_comm version 1.15.13
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.15.13
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [138][0m
+master has started, initiating launch
+master has started, initiating launch
+[1mROS_MASTER_URI=http://172.17.0.2:11311/[0m
+]2;roscore http://172.17.0.2:11311/
+[1msetting /run_id to 3536b306-391c-11ed-b6a2-0242ac110002[0m
+... logging to /tmp/log/3536b306-391c-11ed-b6a2-0242ac110002/roslaunch-6ec17f4ca448-126.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+... logging to /tmp/log/3536b306-391c-11ed-b6a2-0242ac110002/roslaunch-6ec17f4ca448-127.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/code/catkin_ws/src/dt-car-interface/packages/car_interface/launch/all.launch
+Done checking log file disk usage. Usage is <1GB.
+]2;/code/catkin_ws/src/dt-core/packages/duckietown_demos/launch/lane_following.launch
+[1mprocess[rosout-1]: started with pid [154][0m
+started core service [/rosout]
+[1mstarted roslaunch server http://172.17.0.2:41469/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /duckonaut/anti_instagram_node/color_balance_scale: 0.8
+ * /duckonaut/anti_instagram_node/interval: 5
+ * /duckonaut/anti_instagram_node/output_scale: 0.2
+ * /duckonaut/fsm_node/events/joystick_override_off/msg_type: BoolStamped
+ * /duckonaut/fsm_node/events/joystick_override_off/topic: joy_mapper_node/j...
+ * /duckonaut/fsm_node/events/joystick_override_off/trigger: False
+ * /duckonaut/fsm_node/events/joystick_override_on/msg_type: BoolStamped
+ * /duckonaut/fsm_node/events/joystick_override_on/topic: joy_mapper_node/j...
+ * /duckonaut/fsm_node/events/joystick_override_on/trigger: True
+ * /duckonaut/fsm_node/events/obstacle_cleared/msg_type: BoolStamped
+ * /duckonaut/fsm_node/events/obstacle_cleared/topic: road_anomaly_watc...
+ * /duckonaut/fsm_node/events/obstacle_cleared/trigger: False
+ * /duckonaut/fsm_node/events/obstacle_exists/msg_type: BoolStamped
+ * /duckonaut/fsm_node/events/obstacle_exists/topic: road_anomaly_watc...
+ * /duckonaut/fsm_node/events/obstacle_exists/trigger: True
+ * /duckonaut/fsm_node/global_transitions/joystick_override_off: LANE_FOLLOWING
+ * /duckonaut/fsm_node/global_transitions/joystick_override_on: NORMAL_JOYSTICK_C...
+ * /duckonaut/fsm_node/initial_state: NORMAL_JOYSTICK_C...
+ * /duckonaut/fsm_node/nodes/anti_instagram: anti_instagram_no...
+ * /duckonaut/fsm_node/nodes/decoder_node: decoder_node/switch
+ * /duckonaut/fsm_node/nodes/framerate_high: camera_node/frame...
+ * /duckonaut/fsm_node/nodes/lane_controller_node: lane_controller_n...
+ * /duckonaut/fsm_node/nodes/lane_filter_node: lane_filter_node/...
+ * /duckonaut/fsm_node/nodes/line_detector_node: line_detector_nod...
+ * /duckonaut/fsm_node/nodes/static_object_detector_node: static_object_det...
+ * /duckonaut/fsm_node/nodes/vehicle_avoidance_control_node: vehicle_avoidance...
+ * /duckonaut/fsm_node/nodes/vehicle_detection_node: vehicle_detection...
+ * /duckonaut/fsm_node/nodes/vehicle_filter_node: vehicle_filter_no...
+ * /duckonaut/fsm_node/states/LANE_FOLLOWING/active_nodes: ['anti_instagram'...
+ * /duckonaut/fsm_node/states/LANE_FOLLOWING/current_status: in_progress
+ * /duckonaut/fsm_node/states/LANE_FOLLOWING/lights: ['lane_following']
+ * /duckonaut/fsm_node/states/LANE_FOLLOWING/transitions/obstacle_exists: OBSTACLE_STOP
+ * /duckonaut/fsm_node/states/NORMAL_JOYSTICK_CONTROL/active_nodes: ['lane_filter_nod...
+ * /duckonaut/fsm_node/states/NORMAL_JOYSTICK_CONTROL/current_status: implemented
+ * /duckonaut/fsm_node/states/NORMAL_JOYSTICK_CONTROL/lights: ['joystick']
+ * /duckonaut/fsm_node/states/OBSTACLE_STOP/active_nodes: ['anti_instagram'...
+ * /duckonaut/fsm_node/states/OBSTACLE_STOP/current_status: in_progress
+ * /duckonaut/fsm_node/states/OBSTACLE_STOP/lights: ['lane_following']
+ * /duckonaut/fsm_node/states/OBSTACLE_STOP/transitions/obstacle_cleared: LANE_FOLLOWING
+ * /duckonaut/ground_projection_node/board_h: 5
+ * /duckonaut/ground_projection_node/board_w: 7
+ * /duckonaut/ground_projection_node/square_size: 0.031
+ * /duckonaut/ground_projection_node/x_offset: 0.191
+ * /duckonaut/ground_projection_node/y_offset: 0.093
+ * /duckonaut/lane_controller_node/d_offset: 0.0
+ * /duckonaut/lane_controller_node/d_resolution: 0.011
+ * /duckonaut/lane_controller_node/d_thres: 0.2615
+ * /duckonaut/lane_controller_node/integral_bounds/d/bot: -0.3
+ * /duckonaut/lane_controller_node/integral_bounds/d/top: 0.3
+ * /duckonaut/lane_controller_node/integral_bounds/phi/bot: -1.2
+ * /duckonaut/lane_controller_node/integral_bounds/phi/top: 1.2
+ * /duckonaut/lane_controller_node/k_Id: -0.3
+ * /duckonaut/lane_controller_node/k_Iphi: 0.0
+ * /duckonaut/lane_controller_node/k_d: -6.0
+ * /duckonaut/lane_controller_node/k_theta: -5
+ * /duckonaut/lane_controller_node/omega_ff: 0
+ * /duckonaut/lane_controller_node/phi_resolution: 0.051
+ * /duckonaut/lane_controller_node/stop_line_slowdown/end: 0.15
+ * /duckonaut/lane_controller_node/stop_line_slowdown/start: 0.6
+ * /duckonaut/lane_controller_node/theta_thres: 0.523
+ * /duckonaut/lane_controller_node/v_bar: 0.19
+ * /duckonaut/lane_controller_node/verbose: 0
+ * /duckonaut/lane_filter_node/debug: False
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/cov_v: 0.5
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/d_max: 0.3
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/d_min: -0.15
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/delta_d: 0.02
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/delta_phi: 0.1
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/lanewidth: 0.23
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/linewidth_white: 0.05
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/linewidth_yellow: 0.025
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/mean_d_0: 0
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/mean_phi_0: 0
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/min_max: 0.1
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/phi_max: 1.5
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/phi_min: -1.5
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/range_est: 0.33
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/range_max: 0.6
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/range_min: 0.2
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/sigma_d_0: 0.1
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/sigma_d_mask: 1.0
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/sigma_phi_0: 0.1
+ * /duckonaut/lane_filter_node/lane_filter_histogram_configuration/sigma_phi_mask: 2.0
+ * /duckonaut/lane_filter_node/use_propagation: True
+ * /duckonaut/line_detector_node/colors/RED/high_1: [15, 255, 255]
+ * /duckonaut/line_detector_node/colors/RED/high_2: [180, 255, 255]
+ * /duckonaut/line_detector_node/colors/RED/low_1: [0, 140, 100]
+ * /duckonaut/line_detector_node/colors/RED/low_2: [165, 140, 100]
+ * /duckonaut/line_detector_node/colors/WHITE/high: [180, 100, 255]
+ * /duckonaut/line_detector_node/colors/WHITE/low: [0, 0, 150]
+ * /duckonaut/line_detector_node/colors/YELLOW/high: [45, 255, 255]
+ * /duckonaut/line_detector_node/colors/YELLOW/low: [25, 140, 100]
+ * /duckonaut/line_detector_node/img_size: [120, 160]
+ * /duckonaut/line_detector_node/line_detector_parameters/canny_aperture_size: 3
+ * /duckonaut/line_detector_node/line_detector_parameters/canny_thresholds: [80, 200]
+ * /duckonaut/line_detector_node/line_detector_parameters/dilation_kernel_size: 3
+ * /duckonaut/line_detector_node/line_detector_parameters/hough_max_line_gap: 1
+ * /duckonaut/line_detector_node/line_detector_parameters/hough_min_line_length: 3
+ * /duckonaut/line_detector_node/line_detector_parameters/hough_threshold: 2
+ * /duckonaut/line_detector_node/top_cutoff: 40
+ * /duckonaut/line_segment_visualizer_node/veh_name: duckonaut
+ * /rosdistro: noetic
+ * /rosversion: 1.15.13
+
+NODES
+  /
+    duckonaut_to_map (tf/static_transform_publisher)
+  /duckonaut/
+    anti_instagram_node (anti_instagram/anti_instagram_node.py)
+    fsm_node (fsm/fsm_node.py)
+    ground_projection_node (ground_projection/ground_projection_node.py)
+    lane_controller_node (lane_control/lane_controller_node.py)
+    lane_filter_node (lane_filter/lane_filter_node.py)
+    lane_pose_visualizer_node (visualization_tools/lane_pose_visualizer_node.py)
+    line_detector_node (line_detector/line_detector_node.py)
+    line_segment_visualizer_node (visualization_tools/line_segment_visualizer_node.py)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/code/catkin_ws/src/dt-core/packages/duckietown_demos/launch/lane_following.launch http://localhost:11311
+[1mstarted roslaunch server http://172.17.0.2:37599/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /duckonaut/car_cmd_switch_node/mappings/ARRIVE_AT_STOP_LINE: stop
+ * /duckonaut/car_cmd_switch_node/mappings/AVOID_OBSTACLE: obstacle
+ * /duckonaut/car_cmd_switch_node/mappings/AVOID_VEHICLE: vehicle
+ * /duckonaut/car_cmd_switch_node/mappings/CALIBRATING: calib
+ * /duckonaut/car_cmd_switch_node/mappings/CALIBRATING_CALC: calib_calc
+ * /duckonaut/car_cmd_switch_node/mappings/CHARGING_FIRST_IN_LINE: stop
+ * /duckonaut/car_cmd_switch_node/mappings/DEEP_LANE_FOLLOWING: deep_learning
+ * /duckonaut/car_cmd_switch_node/mappings/INTERSECTION_CONTROL: intersection
+ * /duckonaut/car_cmd_switch_node/mappings/INTERSECTION_COORDINATION: stop
+ * /duckonaut/car_cmd_switch_node/mappings/INTERSECTION_PLANNING: stop
+ * /duckonaut/car_cmd_switch_node/mappings/INTERSECTION_RECOVERY: recovery
+ * /duckonaut/car_cmd_switch_node/mappings/IN_CHARGING_AREA: vehicle
+ * /duckonaut/car_cmd_switch_node/mappings/LANE_FOLLOWING: lane
+ * /duckonaut/car_cmd_switch_node/mappings/LANE_FOLLOWING_AVOID: lane
+ * /duckonaut/car_cmd_switch_node/mappings/LANE_RECOVERY: recovery
+ * /duckonaut/car_cmd_switch_node/mappings/LOCALIZATION: stop
+ * /duckonaut/car_cmd_switch_node/mappings/NORMAL_JOYSTICK_CONTROL: joystick
+ * /duckonaut/car_cmd_switch_node/mappings/OBSTACLE_ALERT: lane
+ * /duckonaut/car_cmd_switch_node/mappings/OBSTACLE_STOP: stop
+ * /duckonaut/car_cmd_switch_node/mappings/PARALLEL_AUTONOMY: parallel_autonomy
+ * /duckonaut/car_cmd_switch_node/mappings/PARKING: parking
+ * /duckonaut/car_cmd_switch_node/mappings/SAFE_JOYSTICK_CONTROL: parallel_autonomy
+ * /duckonaut/car_cmd_switch_node/mode_topic: fsm_node/mode
+ * /duckonaut/car_cmd_switch_node/source_topics/calib: auto_calibration_...
+ * /duckonaut/car_cmd_switch_node/source_topics/calib_calc: auto_calibration_...
+ * /duckonaut/car_cmd_switch_node/source_topics/coordination: coordinator_node/...
+ * /duckonaut/car_cmd_switch_node/source_topics/deep_learning: duckiebot_il_lane...
+ * /duckonaut/car_cmd_switch_node/source_topics/intersection: lane_controller_n...
+ * /duckonaut/car_cmd_switch_node/source_topics/joystick: joy_mapper_node/c...
+ * /duckonaut/car_cmd_switch_node/source_topics/lane: lane_controller_n...
+ * /duckonaut/car_cmd_switch_node/source_topics/obstacle: simple_stop_contr...
+ * /duckonaut/car_cmd_switch_node/source_topics/parallel_autonomy: lane_supervisor_n...
+ * /duckonaut/car_cmd_switch_node/source_topics/parking: lane_controller_n...
+ * /duckonaut/car_cmd_switch_node/source_topics/recovery: lane_recovery_nod...
+ * /duckonaut/car_cmd_switch_node/source_topics/stop: simple_stop_contr...
+ * /duckonaut/joy_mapper_node/bicycle_kinematics: 0
+ * /duckonaut/joy_mapper_node/simulated_vehicle_length: 0.18
+ * /duckonaut/joy_mapper_node/speed_gain: 0.41
+ * /duckonaut/joy_mapper_node/steer_gain: 8.3
+ * /duckonaut/kinematics_node/baseline: 0.1
+ * /duckonaut/kinematics_node/gain: 1.0
+ * /duckonaut/kinematics_node/k: 27.0
+ * /duckonaut/kinematics_node/limit: 1.0
+ * /duckonaut/kinematics_node/omega_max: 8.0
+ * /duckonaut/kinematics_node/radius: 0.0318
+ * /duckonaut/kinematics_node/trim: 0.0
+ * /duckonaut/kinematics_node/v_max: 1.0
+ * /rosdistro: noetic
+ * /rosversion: 1.15.13
+
+NODES
+  /duckonaut/
+    car_cmd_switch_node (dagu_car/car_cmd_switch_node.py)
+    joy_mapper_node (joy_mapper/joy_mapper_node.py)
+    kinematics_node (dagu_car/kinematics_node.py)
+    velocity_to_pose_node (dagu_car/velocity_to_pose_node.py)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/code/catkin_ws/src/dt-car-interface/packages/car_interface/launch/all.launch http://localhost:11311
+[1mprocess[duckonaut/joy_mapper_node-1]: started with pid [181][0m
+[1mprocess[duckonaut/fsm_node-1]: started with pid [182][0m
+[1mprocess[duckonaut/line_detector_node-2]: started with pid [184][0m
+[1mprocess[duckonaut/kinematics_node-2]: started with pid [183][0m
+[1mprocess[duckonaut/ground_projection_node-3]: started with pid [185][0m
+[1mprocess[duckonaut/velocity_to_pose_node-3]: started with pid [186][0m
+[1mprocess[duckonaut/car_cmd_switch_node-4]: started with pid [188][0m
+[1mprocess[duckonaut/line_segment_visualizer_node-4]: started with pid [187][0m
+[1mprocess[duckonaut_to_map-5]: started with pid [189][0m
+[1mprocess[duckonaut/lane_filter_node-6]: started with pid [190][0m
+[1mprocess[duckonaut/lane_controller_node-7]: started with pid [192][0m
+[1mprocess[duckonaut/lane_pose_visualizer_node-8]: started with pid [197][0m
+[1mprocess[duckonaut/anti_instagram_node-9]: started with pid [198][0m
+DEBUG:commons:version: 6.2.4 *
+DEBUG:typing:version: 6.2.3
+[32m[DEBUG] [1663702884.566648]: init_node, name[/duckonaut/lane_controller_node], pid[192]
+[0m[32m[DEBUG] [1663702884.567782]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663702884.568919]: bound to 0.0.0.0 34195
+[0m[32m[DEBUG] [1663702884.570212]: ... service URL is rosrpc://172.17.0.2:34195
+[0m[32m[DEBUG] [1663702884.571144]: [/duckonaut/lane_controller_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663702884.572596]: ... service URL is rosrpc://172.17.0.2:34195
+[0m[32m[DEBUG] [1663702884.573511]: [/duckonaut/lane_controller_node/set_logger_level]: new Service instance
+[0m[INFO] [1663702884.575073]: [/duckonaut/lane_controller_node] Initializing...
+[32m[DEBUG] [1663702884.585300]: ... service URL is rosrpc://172.17.0.2:34195
+[0m[32m[DEBUG] [1663702884.586570]: [/duckonaut/lane_controller_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663702884.588739]: ... service URL is rosrpc://172.17.0.2:34195
+[0m[32m[DEBUG] [1663702884.589771]: [/duckonaut/lane_controller_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663702884.591208]: ... service URL is rosrpc://172.17.0.2:34195
+[0m[32m[DEBUG] [1663702884.592159]: [/duckonaut/lane_controller_node/request_parameters_update]: new Service instance
+[0m[INFO] [1663702884.599849]: [/duckonaut/lane_controller_node] Health status changed [STARTING] -> [STARTED]
+DEBUG:geometry:PyGeometry-z6 version 2.1.4 path /usr/local/lib/python3.8/dist-packages
+[32m[DEBUG] [1663702884.604108]: Parameter "/duckonaut/lane_controller_node/v_bar" was registered for updates
+[0m[32m[DEBUG] [1663702884.607167]: Parameter "/duckonaut/lane_controller_node/k_d" was registered for updates
+[0m[32m[DEBUG] [1663702884.610229]: Parameter "/duckonaut/lane_controller_node/k_theta" was registered for updates
+[0m[32m[DEBUG] [1663702884.613629]: Parameter "/duckonaut/lane_controller_node/k_Id" was registered for updates
+[0mDEBUG:commons:version: 6.2.4 *
+[32m[DEBUG] [1663702884.617314]: Parameter "/duckonaut/lane_controller_node/k_Iphi" was registered for updates
+[0m[32m[DEBUG] [1663702884.651048]: init_node, name[/duckonaut/kinematics_node], pid[183]
+[0mDEBUG:commons:version: 6.2.4 *
+[INFO] [1663702884.653451]: [/duckonaut/lane_controller_node] Initialized!
+[32m[DEBUG] [1663702884.653582]: init_node, name[/duckonaut/joy_mapper_node], pid[181]
+[0m[32m[DEBUG] [1663702884.654359]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663702884.655003]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663702884.655823]: node[/duckonaut/lane_controller_node, http://172.17.0.2:40801/] entering spin(), pid[192]
+[0m[32m[DEBUG] [1663702884.656138]: bound to 0.0.0.0 34395
+[0m[32m[DEBUG] [1663702884.656398]: bound to 0.0.0.0 36379
+[0m[32m[DEBUG] [1663702884.658135]: ... service URL is rosrpc://172.17.0.2:36379
+[0m[32m[DEBUG] [1663702884.658432]: ... service URL is rosrpc://172.17.0.2:34395
+[0m[32m[DEBUG] [1663702884.659392]: [/duckonaut/joy_mapper_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663702884.659889]: [/duckonaut/kinematics_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663702884.661622]: ... service URL is rosrpc://172.17.0.2:36379
+[0mDEBUG:typing:version: 6.2.3
+[32m[DEBUG] [1663702884.662711]: ... service URL is rosrpc://172.17.0.2:34395
+[0m[32m[DEBUG] [1663702884.662896]: [/duckonaut/joy_mapper_node/set_logger_level]: new Service instance
+[0m[32m[DEBUG] [1663702884.664840]: [/duckonaut/kinematics_node/set_logger_level]: new Service instance
+[0m[INFO] [1663702884.666870]: [/duckonaut/joy_mapper_node] Initializing...
+[INFO] [1663702884.668744]: [/duckonaut/kinematics_node] Initializing...
+[INFO] [1663702884.669284]: [/duckonaut/fsm_node] Initialized.
+[32m[DEBUG] [1663702884.670232]: init_node, name[/duckonaut/velocity_to_pose_node], pid[186]
+[0m[INFO] [1663702884.671725]: [/duckonaut/fsm_node] FSMState: NORMAL_JOYSTICK_CONTROL
+[32m[DEBUG] [1663702884.671822]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663702884.673423]: bound to 0.0.0.0 38673
+[0m[32m[DEBUG] [1663702884.674963]: ... service URL is rosrpc://172.17.0.2:38673
+[0m[32m[DEBUG] [1663702884.675574]: init_node, name[/duckonaut/line_segment_visualizer_node], pid[187]
+[0m[32m[DEBUG] [1663702884.676092]: [/duckonaut/velocity_to_pose_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663702884.676800]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663702884.677293]: ... service URL is rosrpc://172.17.0.2:36379
+[0m[32m[DEBUG] [1663702884.678699]: bound to 0.0.0.0 42179
+[0m[32m[DEBUG] [1663702884.678778]: ... service URL is rosrpc://172.17.0.2:38673
+[0m[32m[DEBUG] [1663702884.679193]: [/duckonaut/joy_mapper_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663702884.680204]: ... service URL is rosrpc://172.17.0.2:42179
+[0m[32m[DEBUG] [1663702884.680715]: [/duckonaut/velocity_to_pose_node/set_logger_level]: new Service instance
+[0m[32m[DEBUG] [1663702884.681261]: [/duckonaut/line_segment_visualizer_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663702884.681576]: ... service URL is rosrpc://172.17.0.2:34395
+[0m[32m[DEBUG] [1663702884.682284]: ... service URL is rosrpc://172.17.0.2:36379
+[0m[32m[DEBUG] [1663702884.684788]: [/duckonaut/kinematics_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663702884.685008]: [/duckonaut/joy_mapper_node/get_parameters_list]: new Service instance
+[0m[INFO] [1663702884.685270]: [/duckonaut/velocity_to_pose_node] Initializing...
+[32m[DEBUG] [1663702884.685445]: init_node, name[/duckonaut/car_cmd_switch_node], pid[188]
+[0m[32m[DEBUG] [1663702884.685711]: ... service URL is rosrpc://172.17.0.2:42179
+[0m[32m[DEBUG] [1663702884.687837]: [/duckonaut/line_segment_visualizer_node/set_logger_level]: new Service instance
+[0m[32m[DEBUG] [1663702884.687845]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663702884.688373]: ... service URL is rosrpc://172.17.0.2:34395
+[0m[32m[DEBUG] [1663702884.688942]: ... service URL is rosrpc://172.17.0.2:36379
+[0m[32m[DEBUG] [1663702884.690342]: bound to 0.0.0.0 36149
+[0m[32m[DEBUG] [1663702884.690821]: [/duckonaut/kinematics_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663702884.691000]: [/duckonaut/joy_mapper_node/request_parameters_update]: new Service instance
+[0m[INFO] [1663702884.691664]: [/duckonaut/line_segment_visualizer_node] Initializing...
+[32m[DEBUG] [1663702884.692627]: ... service URL is rosrpc://172.17.0.2:36149
+[0m[32m[DEBUG] [1663702884.694344]: [/duckonaut/car_cmd_switch_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663702884.694634]: ... service URL is rosrpc://172.17.0.2:34395
+[0m[32m[DEBUG] [1663702884.696357]: [/duckonaut/kinematics_node/request_parameters_update]: new Service instance
+[0m[32m[DEBUG] [1663702884.698218]: ... service URL is rosrpc://172.17.0.2:36149
+[0m[32m[DEBUG] [1663702884.698833]: ... service URL is rosrpc://172.17.0.2:38673
+[0m[32m[DEBUG] [1663702884.699922]: [/duckonaut/car_cmd_switch_node/set_logger_level]: new Service instance
+[0m[32m[DEBUG] [1663702884.703287]: [/duckonaut/velocity_to_pose_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663702884.704254]: ... service URL is rosrpc://172.17.0.2:42179
+[0mDEBUG:geometry:PyGeometry-z6 version 2.1.4 path /usr/local/lib/python3.8/dist-packages
+[INFO] [1663702884.704967]: [/duckonaut/joy_mapper_node] Health status changed [STARTING] -> [STARTED]
+[INFO] [1663702884.705937]: [/duckonaut/car_cmd_switch_node] Initializing...
+[32m[DEBUG] [1663702884.707452]: [/duckonaut/line_segment_visualizer_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663702884.708576]: ... service URL is rosrpc://172.17.0.2:38673
+[0m[32m[DEBUG] [1663702884.711619]: [/duckonaut/velocity_to_pose_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663702884.714039]: ... service URL is rosrpc://172.17.0.2:42179
+[0m[INFO] [1663702884.716457]: [/duckonaut/kinematics_node] Health status changed [STARTING] -> [STARTED]
+[32m[DEBUG] [1663702884.716487]: [/duckonaut/line_segment_visualizer_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663702884.716714]: ... service URL is rosrpc://172.17.0.2:38673
+[0m[32m[DEBUG] [1663702884.719515]: ... service URL is rosrpc://172.17.0.2:36149
+[0m[32m[DEBUG] [1663702884.719637]: [/duckonaut/velocity_to_pose_node/request_parameters_update]: new Service instance
+[0m[32m[DEBUG] [1663702884.719967]: ... service URL is rosrpc://172.17.0.2:42179
+[0m[32m[DEBUG] [1663702884.722659]: [/duckonaut/car_cmd_switch_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663702884.723171]: [/duckonaut/line_segment_visualizer_node/request_parameters_update]: new Service instance
+[0m[32m[DEBUG] [1663702884.728776]: ... service URL is rosrpc://172.17.0.2:36149
+[0m[32m[DEBUG] [1663702884.729588]: init_node, name[/duckonaut/lane_pose_visualizer_node], pid[197]
+[0m[32m[DEBUG] [1663702884.732116]: [/duckonaut/car_cmd_switch_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663702884.733527]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663702884.736963]: bound to 0.0.0.0 41169
+[0m[32m[DEBUG] [1663702884.739168]: ... service URL is rosrpc://172.17.0.2:36149
+[0m[32m[DEBUG] [1663702884.740389]: ... service URL is rosrpc://172.17.0.2:41169
+[0m[INFO] [1663702884.741679]: [/duckonaut/velocity_to_pose_node] Health status changed [STARTING] -> [STARTED]
+[32m[DEBUG] [1663702884.742538]: node[/duckonaut/joy_mapper_node, http://172.17.0.2:36319/] entering spin(), pid[181]
+[0m[32m[DEBUG] [1663702884.743853]: [/duckonaut/car_cmd_switch_node/request_parameters_update]: new Service instance
+[0m[32m[DEBUG] [1663702884.744402]: [/duckonaut/lane_pose_visualizer_node/get_loggers]: new Service instance
+[0m[INFO] [1663702884.745248]: [/duckonaut/line_segment_visualizer_node] Health status changed [STARTING] -> [STARTED]
+[32m[DEBUG] [1663702884.746750]: connecting to 172.17.0.2 36379
+[0m[32m[DEBUG] [1663702884.752585]: ... service URL is rosrpc://172.17.0.2:41169
+[0mDEBUG:typing:version: 6.2.3
+[INFO] [1663702884.754876]: [/duckonaut/line_segment_visualizer_node] ~veh_name = duckonaut 
+[32m[DEBUG] [1663702884.755294]: [/duckonaut/lane_pose_visualizer_node/set_logger_level]: new Service instance
+[0m[INFO] [1663702884.755753]: [/duckonaut/velocity_to_pose_node] Initialized.
+[32m[DEBUG] [1663702884.758284]: node[/duckonaut/velocity_to_pose_node, http://172.17.0.2:45795/] entering spin(), pid[186]
+[0m[INFO] [1663702884.759677]: [/duckonaut/lane_pose_visualizer_node] Initializing...
+[INFO] [1663702884.762939]: [/duckonaut/car_cmd_switch_node] Health status changed [STARTING] -> [STARTED]
+[32m[DEBUG] [1663702884.763339]: Parameter "/duckonaut/kinematics_node/gain" was registered for updates
+[0m[32m[DEBUG] [1663702884.767559]: Parameter "/duckonaut/kinematics_node/trim" was registered for updates
+[0m[INFO] [1663702884.767979]: [/duckonaut/line_segment_visualizer_node] Initialzed.
+[32m[DEBUG] [1663702884.769147]: node[/duckonaut/line_segment_visualizer_node, http://172.17.0.2:41003/] entering spin(), pid[187]
+[0m[32m[DEBUG] [1663702884.770487]: ... service URL is rosrpc://172.17.0.2:41169
+[0m[32m[DEBUG] [1663702884.772138]: [/duckonaut/lane_pose_visualizer_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663702884.772199]: Parameter "/duckonaut/kinematics_node/limit" was registered for updates
+[0m[32m[DEBUG] [1663702884.774932]: ... service URL is rosrpc://172.17.0.2:41169
+[0m[32m[DEBUG] [1663702884.776483]: [/duckonaut/lane_pose_visualizer_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663702884.777009]: Parameter "/duckonaut/kinematics_node/baseline" was registered for updates
+[0m[32m[DEBUG] [1663702884.778935]: ... service URL is rosrpc://172.17.0.2:41169
+[0m[32m[DEBUG] [1663702884.780252]: [/duckonaut/lane_pose_visualizer_node/request_parameters_update]: new Service instance
+[0m[32m[DEBUG] [1663702884.782450]: Parameter "/duckonaut/kinematics_node/radius" was registered for updates
+[0m[32m[DEBUG] [1663702884.789258]: Parameter "/duckonaut/kinematics_node/v_max" was registered for updates
+[0m[32m[DEBUG] [1663702884.790660]: connecting to 172.17.0.2 43067
+[0m[INFO] [1663702884.791645]: [/duckonaut/lane_pose_visualizer_node] Health status changed [STARTING] -> [STARTED]
+[32m[DEBUG] [1663702884.792032]: connecting to 172.17.0.2 34195
+[0m[INFO] [1663702884.793460]: [/duckonaut/lane_pose_visualizer_node] Vehicle name: duckonaut
+[32m[DEBUG] [1663702884.793695]: Parameter "/duckonaut/kinematics_node/omega_max" was registered for updates
+[0m[32m[DEBUG] [1663702884.795060]: ... service URL is rosrpc://172.17.0.2:34395
+[0m[32m[DEBUG] [1663702884.796042]: [/duckonaut/kinematics_node/save_calibration]: new Service instance
+[0m[INFO] [1663702884.802053]: [/duckonaut/lane_pose_visualizer_node] Initialzed.
+[32m[DEBUG] [1663702884.802658]: connecting to 172.17.0.2 36379
+[0m[32m[DEBUG] [1663702884.806186]: node[/duckonaut/lane_pose_visualizer_node, http://172.17.0.2:45673/] entering spin(), pid[197]
+[0m[32m[DEBUG] [1663702884.808189]: connecting to 172.17.0.2 34395
+[0m[32m[DEBUG] [1663702884.810364]: connecting to 172.17.0.2 34395
+[0mDEBUG:geometry:PyGeometry-z6 version 2.1.4 path /usr/local/lib/python3.8/dist-packages
+[32m[DEBUG] [1663702884.817085]: connecting to 172.17.0.2 36149
+[0m[32m[DEBUG] [1663702884.818985]: init_node, name[/duckonaut/anti_instagram_node], pid[198]
+[0m[INFO] [1663702884.819997]: [/duckonaut/car_cmd_switch_node] Initialized.
+[32m[DEBUG] [1663702884.820825]: binding to 0.0.0.0 0
+[0m[INFO] [1663702884.821543]: [/duckonaut/kinematics_node] Initialized with: 
+{
+    "baseline": 0.1,
+    "gain": 1.0,
+    "k": 27.0,
+    "limit": 1.0,
+    "omega_max": 8.0,
+    "radius": 0.0318,
+    "trim": 0.1,
+    "v_max": 1.0
+}
+[INFO] [1663702884.822024]: [/duckonaut/car_cmd_switch_node] Sources:
+	- 'lane': 'lane_controller_node/car_cmd'
+	- 'intersection': 'lane_controller_node/car_cmd'
+	- 'coordination': 'coordinator_node/car_cmd'
+	- 'joystick': 'joy_mapper_node/car_cmd'
+	- 'obstacle': 'simple_stop_controller_node/car_cmd'
+	- 'parallel_autonomy': 'lane_supervisor_node/car_cmd'
+	- 'recovery': 'lane_recovery_node/car_cmd'
+	- 'deep_learning': 'duckiebot_il_lane_following/car_cmd'
+	- 'parking': 'lane_controller_node/car_cmd'
+	- 'calib': 'auto_calibration_node/car_cmd'
+	- 'calib_calc': 'auto_calibration_calculation_node/car_cmd'
+	- 'stop': 'simple_stop_controller_node/car_cmd'
+[32m[DEBUG] [1663702884.822135]: bound to 0.0.0.0 38875
+[0m[32m[DEBUG] [1663702884.822539]: node[/duckonaut/kinematics_node, http://172.17.0.2:46405/] entering spin(), pid[183]
+[0m[32m[DEBUG] [1663702884.823897]: node[/duckonaut/car_cmd_switch_node, http://172.17.0.2:42357/] entering spin(), pid[188]
+[0mINFO:conf_tools:[32mconf_tools 6.0.2[0m
+[32m[DEBUG] [1663702884.824075]: ... service URL is rosrpc://172.17.0.2:38875
+[0m[32m[DEBUG] [1663702884.825492]: [/duckonaut/anti_instagram_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663702884.827341]: ... service URL is rosrpc://172.17.0.2:38875
+[0m[32m[DEBUG] [1663702884.828319]: [/duckonaut/anti_instagram_node/set_logger_level]: new Service instance
+[0m[INFO] [1663702884.830003]: [/duckonaut/anti_instagram_node] Initializing...
+[32m[DEBUG] [1663702884.841393]: ... service URL is rosrpc://172.17.0.2:38875
+[0m[32m[DEBUG] [1663702884.842699]: [/duckonaut/anti_instagram_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663702884.844799]: ... service URL is rosrpc://172.17.0.2:38875
+[0m[32m[DEBUG] [1663702884.845980]: [/duckonaut/anti_instagram_node/get_parameters_list]: new Service instance
+[0m[INFO] [1663702884.846659]: [/duckonaut/car_cmd_switch_node] Car cmd switched to joystick in state NORMAL_JOYSTICK_CONTROL.
+[32m[DEBUG] [1663702884.848516]: ... service URL is rosrpc://172.17.0.2:38875
+[0m[32m[DEBUG] [1663702884.849879]: [/duckonaut/anti_instagram_node/request_parameters_update]: new Service instance
+[0m[INFO] [1663702884.856892]: [/duckonaut/anti_instagram_node] Health status changed [STARTING] -> [STARTED]
+[INFO] [1663702884.868976]: [/duckonaut/anti_instagram_node] Initialized.
+[32m[DEBUG] [1663702884.870073]: node[/duckonaut/anti_instagram_node, http://172.17.0.2:46815/] entering spin(), pid[198]
+[0mINFO:conf_tools:[32mconf_tools 6.0.2[0m
+INFO:conf_tools:[32mconf_tools 6.0.2[0m
+[32m[DEBUG] [1663702885.086944]: init_node, name[/duckonaut/line_detector_node], pid[184]
+[0m[32m[DEBUG] [1663702885.088024]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663702885.089047]: bound to 0.0.0.0 44917
+[0m[32m[DEBUG] [1663702885.090122]: ... service URL is rosrpc://172.17.0.2:44917
+[0m[32m[DEBUG] [1663702885.090829]: [/duckonaut/line_detector_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663702885.091951]: ... service URL is rosrpc://172.17.0.2:44917
+[0m[32m[DEBUG] [1663702885.092669]: [/duckonaut/line_detector_node/set_logger_level]: new Service instance
+[0m[INFO] [1663702885.093889]: [/duckonaut/line_detector_node] Initializing...
+[32m[DEBUG] [1663702885.112098]: ... service URL is rosrpc://172.17.0.2:44917
+[0m[32m[DEBUG] [1663702885.113466]: [/duckonaut/line_detector_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663702885.114753]: ... service URL is rosrpc://172.17.0.2:44917
+[0m[32m[DEBUG] [1663702885.115402]: [/duckonaut/line_detector_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663702885.116811]: ... service URL is rosrpc://172.17.0.2:44917
+[0m[32m[DEBUG] [1663702885.117768]: [/duckonaut/line_detector_node/request_parameters_update]: new Service instance
+[0m[INFO] [1663702885.124745]: [/duckonaut/line_detector_node] Health status changed [STARTING] -> [STARTED]
+[32m[DEBUG] [1663702885.133092]: init_node, name[/duckonaut/ground_projection_node], pid[185]
+[0m[32m[DEBUG] [1663702885.134527]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663702885.135923]: bound to 0.0.0.0 35827
+[0m[32m[DEBUG] [1663702885.137391]: ... service URL is rosrpc://172.17.0.2:35827
+[0m[32m[DEBUG] [1663702885.138304]: [/duckonaut/ground_projection_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663702885.140256]: ... service URL is rosrpc://172.17.0.2:35827
+[0m[32m[DEBUG] [1663702885.141374]: [/duckonaut/ground_projection_node/set_logger_level]: new Service instance
+[0m[INFO] [1663702885.143611]: [/duckonaut/ground_projection_node] Initializing...
+[32m[DEBUG] [1663702885.150009]: node[/duckonaut/line_detector_node, http://172.17.0.2:45115/] entering spin(), pid[184]
+[0m[32m[DEBUG] [1663702885.153276]: connecting to 172.17.0.2 38875
+[0m[32m[DEBUG] [1663702885.162859]: ... service URL is rosrpc://172.17.0.2:35827
+[0m[32m[DEBUG] [1663702885.164037]: [/duckonaut/ground_projection_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663702885.165850]: ... service URL is rosrpc://172.17.0.2:35827
+[0m[32m[DEBUG] [1663702885.166821]: [/duckonaut/ground_projection_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663702885.168437]: ... service URL is rosrpc://172.17.0.2:35827
+[0m[32m[DEBUG] [1663702885.169377]: [/duckonaut/ground_projection_node/request_parameters_update]: new Service instance
+[0m[INFO] [1663702885.175213]: [/duckonaut/ground_projection_node] Health status changed [STARTING] -> [STARTED]
+[32m[DEBUG] [1663702885.181985]: node[/duckonaut/ground_projection_node, http://172.17.0.2:39229/] entering spin(), pid[185]
+[0m[32m[DEBUG] [1663702885.184339]: connecting to 172.17.0.2 44917
+[0m[32m[DEBUG] [1663702885.214452]: connecting to 172.17.0.2 35827
+[0m[32m[DEBUG] [1663702885.335251]: init_node, name[/duckonaut/lane_filter_node], pid[190]
+[0m[32m[DEBUG] [1663702885.336894]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663702885.338415]: bound to 0.0.0.0 36649
+[0m[32m[DEBUG] [1663702885.340292]: ... service URL is rosrpc://172.17.0.2:36649
+[0m[32m[DEBUG] [1663702885.341759]: [/duckonaut/lane_filter_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663702885.344483]: ... service URL is rosrpc://172.17.0.2:36649
+[0m[32m[DEBUG] [1663702885.345858]: [/duckonaut/lane_filter_node/set_logger_level]: new Service instance
+[0m[INFO] [1663702885.348454]: [/duckonaut/lane_filter_node] Initializing...
+[32m[DEBUG] [1663702885.371797]: ... service URL is rosrpc://172.17.0.2:36649
+[0m[32m[DEBUG] [1663702885.373047]: [/duckonaut/lane_filter_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663702885.374615]: ... service URL is rosrpc://172.17.0.2:36649
+[0m[32m[DEBUG] [1663702885.375424]: [/duckonaut/lane_filter_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663702885.376917]: ... service URL is rosrpc://172.17.0.2:36649
+[0m[32m[DEBUG] [1663702885.377555]: [/duckonaut/lane_filter_node/request_parameters_update]: new Service instance
+[0m[INFO] [1663702885.382317]: [/duckonaut/lane_filter_node] Health status changed [STARTING] -> [STARTED]
+[32m[DEBUG] [1663702885.392207]: node[/duckonaut/lane_filter_node, http://172.17.0.2:36545/] entering spin(), pid[190]
+[0m[32m[DEBUG] [1663702885.394961]: connecting to 172.17.0.2 35827
+[0m[32m[DEBUG] [1663702885.395617]: connecting to 172.17.0.2 43067
+[0m[32m[DEBUG] [1663702885.395937]: connecting to 172.17.0.2 36149
+[0m[32m[DEBUG] [1663702885.416357]: connecting to 172.17.0.2 36649
+[0m[32m[DEBUG] [1663702885.417540]: connecting to 172.17.0.2 36649
+[0m[32m[DEBUG] [1663702885.418144]: connecting to 172.17.0.2 36649
+[0m+ dt-exec-BG roslaunch --wait duckietown_demos set_state.launch veh:=duckonaut state:=LANE_FOLLOWING
++ cmd='roslaunch --wait duckietown_demos set_state.launch veh:=duckonaut state:=LANE_FOLLOWING'
++ eval 'stdbuf -o L roslaunch --wait duckietown_demos set_state.launch veh:=duckonaut state:=LANE_FOLLOWING 1>&2 &'
++ dt-exec-FG roslaunch --wait agent agent_node.launch
+++ stdbuf -o L roslaunch --wait duckietown_demos set_state.launch veh:=duckonaut state:=LANE_FOLLOWING
++ cmd='roslaunch --wait agent agent_node.launch'
++ eval 'stdbuf -o L roslaunch --wait agent agent_node.launch 1>&2 '
+++ stdbuf -o L roslaunch --wait agent agent_node.launch
+master has started, initiating launch
+... logging to /tmp/log/3536b306-391c-11ed-b6a2-0242ac110002/roslaunch-6ec17f4ca448-400.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/code/submission_ws/src/agent/launch/agent_node.launch
+master has started, initiating launch
+... logging to /tmp/log/3536b306-391c-11ed-b6a2-0242ac110002/roslaunch-6ec17f4ca448-399.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/code/catkin_ws/src/dt-core/packages/duckietown_demos/launch/set_state.launch
+[1mstarted roslaunch server http://172.17.0.2:36717/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.15.13
+
+NODES
+  /
+    agent_node (agent/solution.py)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/code/submission_ws/src/agent/launch/agent_node.launch http://localhost:11311
+[1mstarted roslaunch server http://172.17.0.2:44879/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.15.13
+
+NODES
+  /
+    set_state (rostopic/rostopic)
+
+[1mprocess[agent_node-1]: started with pid [424][0m
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/code/catkin_ws/src/dt-core/packages/duckietown_demos/launch/set_state.launch http://localhost:11311
+[1mprocess[set_state-1]: started with pid [430][0m
+DEBUG:commons:version: 6.2.4 *
+DEBUG:typing:version: 6.2.3
+DEBUG:aido_schemas:aido-protocols version 6.0.59 path /usr/local/lib/python3.8/dist-packages
+DEBUG:nodes:version 6.2.13 path /usr/local/lib/python3.8/dist-packages pyparsing 2.4.6
+[32m[DEBUG] [1663702889.027950]: connecting to 172.17.0.2 43933
+[0m[32m[DEBUG] [1663702889.028577]: connecting to 172.17.0.2 43933
+[0m[INFO] [1663702889.030527]: [/duckonaut/car_cmd_switch_node] Car cmd switched to lane in state LANE_FOLLOWING.
+DEBUG:ipce:version 6.1.2 path /usr/local/lib/python3.8/dist-packages
+DEBUG:nodes_wrapper:checking implementation
+DEBUG:nodes_wrapper:checking implementation OK
+DEBUG:nodes_wrapper.ROSTemplateAgent:run_loop
+  fin: [38;5;127m/fifos/ego0-in[0m
+ fout: [38;5;127mfifo:/fifos/ego0-out[0m
+DEBUG:nodes_wrapper:Fifo /fifos/ego0-out created. I will block until a reader appears.
+DEBUG:nodes_wrapper:Fifo reader appeared for /fifos/ego0-out.
+DEBUG:nodes_wrapper.ROSTemplateAgent:Starting reading
+ fi_desc: [38;5;127m/fifos/ego0-in[0m
+ fo_desc: [38;5;127mfifo:/fifos/ego0-out[0m
+INFO:nodes_wrapper.ROSTemplateAgent.data:6ec17f4ca448:ROSTemplateAgent: init()
+[32m[DEBUG] [1663702889.338552]: connecting to 172.17.0.2 43889
+[0m[32m[DEBUG] [1663702889.338840]: connecting to 172.17.0.2 43889
+[0m[32m[DEBUG] [1663702889.340084]: connecting to 172.17.0.2 43889
+[0m[32m[DEBUG] [1663702889.388446]: init_node, name[/agent_node], pid[424]
+[0m[32m[DEBUG] [1663702889.390621]: ... service URL is rosrpc://172.17.0.2:43889
+[0m[32m[DEBUG] [1663702889.392426]: [/agent_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663702889.395455]: ... service URL is rosrpc://172.17.0.2:43889
+[0m[32m[DEBUG] [1663702889.397082]: [/agent_node/set_logger_level]: new Service instance
+[0m[INFO] [1663702889.399953]: Just after init_node.
+[INFO] [1663702889.786825]: [/duckonaut/ground_projection_node] First projected segments published.
